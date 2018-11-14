@@ -1,18 +1,26 @@
 #include<stdio.h>
-float tim_hinh_chu_nhat(float c, float p)
+float tim_hinh_chu_nhat(float duong_cheo, float chu_vi)
 {
-	float a,b;
-	p=p/2;
-	(c*c)=(a*a)+ (b*b);
+	float a,b,nua_chu_vi=chu_vi/2;
+	printf("Duong cheo: %.2f\t Nua chi vi: %.2f",duong_cheo,nua_chu_vi);
 }
 
 void main()
 {
-	float c,w;
-	printf("Nhap vao canh huyen: ");
-	scanf("%d",&c);
-	printf("Nhap vao chu vi");
-	scanf("%d",&w);
-	tim_hinh_chu_nhat(c,w)
+	float duong_cheo,chu_vi;
+	NhapThongSo:
+		printf("Nhap vao duong cheo: ");
+		scanf("%f",&duong_cheo);
+		printf("Nhap vao chu vi: ");
+		scanf("%f",&chu_vi);
+	if(duong_cheo>=chu_vi/2)
+	{
+		printf("Thong so khong the tao hinh chu nhat! Moi nhap lai.\n");
+		goto NhapThongSo;
+	}
+	else
+	{
+		tim_hinh_chu_nhat(duong_cheo,chu_vi);
+	}
 	getch();
 }
