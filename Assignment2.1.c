@@ -1,10 +1,9 @@
 #include<stdio.h>
-float tim_hinh_chu_nhat(float c, float p)
+float s_chu_nhat(float duong_cheo, float chu_vi)
 {
-	float s;
-	p=p/2;
-	s=-((c*c)-(p*p))/2;
-	printf("Dien tich hinh chu nhat la: %.2f",s);
+	float tong_2_canh;
+	tong_2_canh=chu_vi/2; //Tinh lay nua chu vi(Tong do dai hai canh)
+	return  -((duong_cheo*duong_cheo) - (tong_2_canh*tong_2_canh))/2;
 }
 
 void main()
@@ -15,14 +14,16 @@ void main()
 		scanf("%f",&chu_vi);
 		printf("Nhap vao duong cheo: ");
 		scanf("%f",&duong_cheo);
-	if(duong_cheo>chu_vi/2)
-	{
+	// Kiem tra xem, neu duong cheo nhap vao lon hon hoac bang tong hai canh(nua chu vi)
+	// thi thong so nay khong tao duoc hinh chu nhat--Khong hop le
+	if(duong_cheo >= chu_vi/2)
+	{	system("cls");
 		printf("Thong so khong the tao hinh chu nhat! Moi nhap lai.\n");
 		goto NhapThongSo;
 	}
 	else
 	{
-		tim_hinh_chu_nhat(duong_cheo,chu_vi);
+		printf("Dien tich hinh chu nhat la: %.2f",s_chu_nhat(duong_cheo,chu_vi));
 	}
 	getch();
 }
