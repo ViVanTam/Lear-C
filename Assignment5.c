@@ -4,7 +4,7 @@ void TestSrec(unsigned char Dong[80]);
 
 int main()
 {
-	FILE *TepTin = fopen("test.srec","r");
+	FILE *TepTin = fopen("Ass5.srec","r");
 	unsigned 	char Dong[80];
 	while(fgets(Dong,80,TepTin))
 	{
